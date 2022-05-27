@@ -38,6 +38,10 @@ class RecipeSearchInteractor: RecipeSearchInputProtocol {
             if SavedHistoryArray.count == 10 {
                 SavedHistoryArray.removeLast()
             }
+            //remove repeated element
+            if SavedHistoryArray.contains(searchText){
+                SavedHistoryArray =  SavedHistoryArray.filter{$0 != searchText}
+            }
             historyArray.append(contentsOf: SavedHistoryArray)
         }
         print(historyArray)

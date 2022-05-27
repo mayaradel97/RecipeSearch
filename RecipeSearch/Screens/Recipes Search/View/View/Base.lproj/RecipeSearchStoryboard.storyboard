@@ -40,6 +40,9 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="CFN-h3-z8Q"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="hCo-pY-av2">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -51,11 +54,14 @@
                             <constraint firstItem="FzO-Zq-Iwp" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.09" id="KC5-fc-50l"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VIV-to-1aY" secondAttribute="bottom" id="L5P-y4-tSx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VIV-to-1aY" secondAttribute="trailing" constant="16" id="bVj-RU-Ihc"/>
+                            <constraint firstItem="hCo-pY-av2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fa3-3e-HJ2"/>
                             <constraint firstItem="VIV-to-1aY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="lQL-nd-WmM"/>
+                            <constraint firstItem="hCo-pY-av2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pfG-sH-L4d"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="filterCollectionView" destination="FzO-Zq-Iwp" id="HEv-Qe-Xx2"/>
+                        <outlet property="loadingIndicator" destination="hCo-pY-av2" id="mgr-y0-ung"/>
                         <outlet property="recipesTableView" destination="VIV-to-1aY" id="UKd-Ar-RS1"/>
                     </connections>
                 </viewController>

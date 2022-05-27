@@ -8,6 +8,8 @@
 import UIKit
 
 protocol RecipeSearchViewProtocol: class {
+    func showLoadingIndicator()
+    func hideLoadingIndicator()
     func reloadData() 
 }
 protocol RecipesProtocol {
@@ -23,6 +25,7 @@ protocol RecipeSearchPresenterProtocol: RecipesProtocol {
 }
 protocol RecipeSearchRouterProtocol {
     func  createModule()-> UIViewController
+    func showAlert(with message: String )
 }
 protocol RecipeSearchInputProtocol: RecipesProtocol {
     func saveSearchText(_ searchText: String)

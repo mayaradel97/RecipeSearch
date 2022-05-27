@@ -12,6 +12,7 @@ class RecipeSearchRouter: RecipeSearchRouterProtocol {
 //    {
 //        self.window = window
 //    }
+    private var view: UIViewController!
     func createModule()->UIViewController {
       //  let navigationController = UINavigationController()
         let view: RecipeSearchViewController = .instantiate(storyboardName: "RecipeSearchStoryboard")
@@ -22,6 +23,10 @@ class RecipeSearchRouter: RecipeSearchRouterProtocol {
 //        navigationController.setViewControllers([view], animated: true)
 //        window.rootViewController = navigationController
 //        window.makeKeyAndVisible()
+        self.view = view
         return view
+    }
+    func showAlert(with message: String )  {
+        self.view.showAlert(with: message)
     }
 }

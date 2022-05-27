@@ -14,8 +14,8 @@
             filePath = "RecipeSearch/Screens/Recipes Search/View/Controller/RecipeSearchViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
             landmarkName = "RecipeSearchViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "RecipeSearch/Screens/Recipes Search/Presenter/RecipeSearchPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "getFetchedRecipes(recipes:)"
             landmarkType = "7">
          </BreakpointContent>

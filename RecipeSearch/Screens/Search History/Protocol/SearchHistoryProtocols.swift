@@ -16,6 +16,7 @@ protocol SearchHistoryPresenterProtocol: SearchHistoryProtocol {
     var numberOfHistory: Int {get}
     func getSearchHistory()
     func configureSearchHistoryCell(cell: SearchHistoryTableViewCellProtocol, indexPath: IndexPath)
+    func selectedHistoryRow(at indexPath: IndexPath)
 }
 protocol SearchHistoryRouterProtocol {
     func  createModule()-> UIViewController

@@ -7,9 +7,11 @@
 
 import UIKit
 class RecipeSearchViewController: UIViewController {
+    //MARK:- Variables
+    
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var filterCollectionView: UICollectionView!
     @IBOutlet weak var recipesTableView: UITableView!
-    
     var presenter: RecipeSearchPresenterProtocol!
     var searchController: UISearchController!
     var filterCollectionViewCell: String!
@@ -20,7 +22,16 @@ class RecipeSearchViewController: UIViewController {
         super.viewDidLoad()
         self.cellsRegisteration()
         self.searchControllerConfiguration()
+        self.visibilityOfUIElement()
     }
+    //MARK:- UIElement visibility
+    func visibilityOfUIElement()
+    {
+        self.loadingIndicator.stopAnimating()
+        self.filterCollectionView.isHidden = true
+        self.recipesTableView.isHidden = true
+    }
+    //MARK:- cells registeration
     func cellsRegisteration() {
         
         filterCollectionViewCell = String(describing: FilterCollectionViewCell.self)
@@ -29,7 +40,7 @@ class RecipeSearchViewController: UIViewController {
         filterCollectionView.register(UINib(nibName: filterCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: filterCollectionViewCell)
         recipesTableView.register(UINib(nibName: recipeTableViewCell, bundle: nil), forCellReuseIdentifier: recipeTableViewCell)
     }
-    
+    //MARK:- search controller
     func searchControllerConfiguration() {
         title = "Recipes Search"
         searchController = UISearchController(searchResultsController: SearchHistoryRouter().createModule())
@@ -44,8 +55,22 @@ class RecipeSearchViewController: UIViewController {
         
     }
 }
+//MARK:- RecipeSearchViewProtocol
 extension RecipeSearchViewController: RecipeSearchViewProtocol
 {
+    func showLoadingIndicator() {
+        self.loadingIndicator.startAnimating()
+        //self.filterCollectionView.isHidden = true
+        //self.recipesTableView.isHidden = true
+    }
+    
+    func hideLoadingIndicator() {
+        self.loadingIndicator.startAnimating()
+        self.filterCollectionView.isHidden = false
+        self.recipesTableView.isHidden = false
+        self.loadingIndicator.stopAnimating()
+    }
+    
     func reloadData() {
         self.recipesTableView.reloadData()
     }

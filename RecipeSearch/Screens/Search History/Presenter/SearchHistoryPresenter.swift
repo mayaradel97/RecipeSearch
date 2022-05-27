@@ -24,6 +24,13 @@ class SearchHistoryPresenter: SearchHistoryPresenterProtocol
     func getSearchHistory(){
         interactor.getSearchHistory()
     }
+    func selectedHistoryRow(at indexPath: IndexPath) {
+        //notifyWithSelectedSearchHistory
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constant.searchHistory.rawValue), object: nil, userInfo: [Constant.selectedSearchHistory.rawValue: searchHistoryArray[indexPath.row
+        ]])
+        print(searchHistoryArray[indexPath.row
+        ])
+    }
     func configureSearchHistoryCell(cell: SearchHistoryTableViewCellProtocol, indexPath: IndexPath)
     {
         cell.configure(searchHistoryText: searchHistoryArray[indexPath.row])

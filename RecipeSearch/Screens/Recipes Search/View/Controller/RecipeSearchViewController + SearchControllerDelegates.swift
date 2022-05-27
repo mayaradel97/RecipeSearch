@@ -21,5 +21,9 @@ extension RecipeSearchViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         searchController.searchResultsController?.view.isHidden = false
     }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.visibilityOfUIElement()
+        print("cancel")
+    }
     
 }

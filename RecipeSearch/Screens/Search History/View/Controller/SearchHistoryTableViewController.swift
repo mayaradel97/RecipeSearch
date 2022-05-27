@@ -41,6 +41,11 @@ class SearchHistoryTableViewController: UITableViewController {
         presenter.configureSearchHistoryCell(cell: cell, indexPath: indexPath)
         return cell
     }
+    // MARK: - Table view delegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.selectedHistoryRow(at: indexPath )
+        self.dismiss(animated: true, completion: nil)
+    }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         50
     }

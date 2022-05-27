@@ -12,7 +12,7 @@ struct RecipeSearchWorker {
         networkService = NetworkService()
     }
     func getRescipes(searchText: String,
-                     filter: String?, completion: @escaping(RecipeModel?)->Void)  {
+                     filter: String?, completion: @escaping(RecipeModel?)->Void) {
         var parameters = ["q": searchText,
                           "app_id": API.app_id.rawValue,
                           "app_key": API.app_keys.rawValue]
