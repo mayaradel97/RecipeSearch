@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import SDWebImage
+class RecipeTableViewCell: UITableViewCell, RecipeTableViewCellProtocol {
 
-class RecipeTableViewCell: UITableViewCell {
+    
+  
 
     @IBOutlet weak var recipeImageView: UIImageView!
     
@@ -23,8 +26,12 @@ class RecipeTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    func configure(recipe: RecipeData) {
+        self.recipeTitleLabel.text = recipe.label
+        self.recipeSourceLabel.text = recipe.source
+        self.recipeHealthLabel.text = recipe.healthLabels.joined(separator: " | ")
+        self.recipeImageView.sd_setImage(with: URL(string: recipe.image))
     }
     
 }

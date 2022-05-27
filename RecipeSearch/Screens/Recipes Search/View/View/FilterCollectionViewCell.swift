@@ -14,7 +14,7 @@ class FilterCollectionViewCell: UICollectionViewCell, FilterCollectionViewCellPr
         // Initialization code
     }
     func configure(filter: Filter) {
-        filterLabel.text = filter.name
+        filterLabel.text = filter.rawValue
     }
     
 }

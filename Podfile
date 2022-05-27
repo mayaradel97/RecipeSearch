@@ -7,6 +7,6 @@ target 'RecipeSearch' do
 
   # Pods for RecipeSearch
   pod 'Alamofire'
-  
+  pod 'SDWebImage'
 
 end

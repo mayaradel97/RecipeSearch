@@ -24,7 +24,7 @@
 		9658E581283FD4CD0028E15C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9658E580283FD4CD0028E15C /* Assets.xcassets */; };
 		9658E584283FD4CD0028E15C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9658E582283FD4CD0028E15C /* LaunchScreen.storyboard */; };
 		965EDE63284008D800D33405 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965EDE62284008D800D33405 /* UIViewController+Extension.swift */; };
-		968C60BA283FDDB80055B426 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968C60B9283FDDB80055B426 /* Constant.swift */; };
+		968C60BA283FDDB80055B426 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968C60B9283FDDB80055B426 /* API.swift */; };
 		968C60CA283FE1D90055B426 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968C60C9283FE1D90055B426 /* Recipe.swift */; };
 		968C60D1283FE4270055B426 /* RecipeSearchProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968C60D0283FE4270055B426 /* RecipeSearchProtocols.swift */; };
 		96C414A4284030350073BB8F /* RecipeSearchViewController + RecipesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C414A3284030350073BB8F /* RecipeSearchViewController + RecipesTableView.swift */; };
@@ -38,6 +38,7 @@
 		96C414CA28404BE40073BB8F /* SearchHistoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C414C928404BE40073BB8F /* SearchHistoryInteractor.swift */; };
 		96C414CD28404BF20073BB8F /* SearchHistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C414CC28404BF20073BB8F /* SearchHistoryPresenter.swift */; };
 		96C414D028404C010073BB8F /* SearchHistoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C414CF28404C010073BB8F /* SearchHistoryRouter.swift */; };
+		96E1410E28410BCB00F07D08 /* RecipeSearchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1410D28410BCB00F07D08 /* RecipeSearchWorker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,7 +60,7 @@
 		9658E583283FD4CD0028E15C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9658E585283FD4CD0028E15C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		965EDE62284008D800D33405 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		968C60B9283FDDB80055B426 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		968C60B9283FDDB80055B426 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		968C60C9283FE1D90055B426 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		968C60D0283FE4270055B426 /* RecipeSearchProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchProtocols.swift; sourceTree = "<group>"; };
 		96C414A3284030350073BB8F /* RecipeSearchViewController + RecipesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecipeSearchViewController + RecipesTableView.swift"; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 		96C414C928404BE40073BB8F /* SearchHistoryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryInteractor.swift; sourceTree = "<group>"; };
 		96C414CC28404BF20073BB8F /* SearchHistoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryPresenter.swift; sourceTree = "<group>"; };
 		96C414CF28404C010073BB8F /* SearchHistoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryRouter.swift; sourceTree = "<group>"; };
+		96E1410D28410BCB00F07D08 /* RecipeSearchWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchWorker.swift; sourceTree = "<group>"; };
 		AF6EC6714612959CBD8A4396 /* Pods_RecipeSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC8916F7B9E8D67C6309A8E0 /* Pods-RecipeSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecipeSearch/Pods-RecipeSearch.release.xcconfig"; sourceTree = "<group>"; };
 		C5D0D1D725DB56B35BB684AB /* Pods-RecipeSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeSearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecipeSearch/Pods-RecipeSearch.debug.xcconfig"; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				968C60C3283FE0C60055B426 /* Entity */,
 				968C60C2283FE0BB0055B426 /* Router */,
 				968C60CD283FE33D0055B426 /* Protocol */,
+				96E1410C28410BA800F07D08 /* Worker */,
 			);
 			path = "Recipes Search";
 			sourceTree = "<group>";
@@ -286,7 +289,7 @@
 		968C60CC283FE32D0055B426 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				968C60B9283FDDB80055B426 /* Constant.swift */,
+				968C60B9283FDDB80055B426 /* API.swift */,
 				96403F2C2840227F00818FE0 /* Filter.swift */,
 			);
 			path = Constants;
@@ -395,6 +398,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		96E1410C28410BA800F07D08 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				96E1410D28410BCB00F07D08 /* RecipeSearchWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -493,10 +504,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RecipeSearch/Pods-RecipeSearch-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -522,13 +535,14 @@
 				964F3237283FF60900620120 /* RecipeTableViewCell.swift in Sources */,
 				96C414A4284030350073BB8F /* RecipeSearchViewController + RecipesTableView.swift in Sources */,
 				96403F2D2840227F00818FE0 /* Filter.swift in Sources */,
-				968C60BA283FDDB80055B426 /* Constant.swift in Sources */,
+				968C60BA283FDDB80055B426 /* API.swift in Sources */,
 				96C414A9284035010073BB8F /* NetworkService.swift in Sources */,
 				9658E57A283FD4CB0028E15C /* SceneDelegate.swift in Sources */,
 				964F323C283FF64000620120 /* FilterCollectionViewCell.swift in Sources */,
 				968C60CA283FE1D90055B426 /* Recipe.swift in Sources */,
 				96C414C228404B7F0073BB8F /* SearchHistoryTableViewCell.swift in Sources */,
 				96C414D028404C010073BB8F /* SearchHistoryRouter.swift in Sources */,
+				96E1410E28410BCB00F07D08 /* RecipeSearchWorker.swift in Sources */,
 				96C414CA28404BE40073BB8F /* SearchHistoryInteractor.swift in Sources */,
 				964F324A283FFCEF00620120 /* RecipeSearchRouter.swift in Sources */,
 				96C414B82840490A0073BB8F /* SearchHistoryProtocols.swift in Sources */,

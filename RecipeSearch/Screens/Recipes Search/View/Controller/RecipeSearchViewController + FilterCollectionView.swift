@@ -31,6 +31,10 @@ extension RecipeSearchViewController : UICollectionViewDataSource
 extension RecipeSearchViewController: UICollectionViewDelegate
 {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let filter =  presenter.getFilterName(at: indexPath)
+        presenter.getRecipes(searchText: searchControllerText, filter: filter)
+       print( presenter.getFilterName(at: indexPath))
+        //change color
         collectionView.cellForItem(at: indexPath)?.contentView.backgroundColor = .lightGray
     }
 }

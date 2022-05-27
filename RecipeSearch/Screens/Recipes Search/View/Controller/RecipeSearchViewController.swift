@@ -14,6 +14,7 @@ class RecipeSearchViewController: UIViewController {
     var searchController: UISearchController!
     var filterCollectionViewCell: String!
     var recipeTableViewCell: String!
+    var searchControllerText: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,5 +44,7 @@ class RecipeSearchViewController: UIViewController {
 }
 extension RecipeSearchViewController: RecipeSearchViewProtocol
 {
-    
+    func reloadData() {
+        self.recipesTableView.reloadData()
+    }
 }

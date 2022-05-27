@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FzO-Zq-Iwp">
-                                <rect key="frame" x="8" y="60" width="398" height="80.5"/>
+                                <rect key="frame" x="8" y="44" width="398" height="80.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="X6W-tD-0NU">
                                     <size key="itemSize" width="128" height="128"/>
@@ -33,7 +33,7 @@
                                 </connections>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VIV-to-1aY">
-                                <rect key="frame" x="16" y="156.5" width="382" height="705.5"/>
+                                <rect key="frame" x="16" y="124.5" width="382" height="737.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="v1H-tu-RnV"/>
@@ -44,8 +44,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="VIV-to-1aY" firstAttribute="top" secondItem="FzO-Zq-Iwp" secondAttribute="bottom" constant="16" id="AwX-zL-yRm"/>
-                            <constraint firstItem="FzO-Zq-Iwp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="BAE-Pi-GR6"/>
+                            <constraint firstItem="VIV-to-1aY" firstAttribute="top" secondItem="FzO-Zq-Iwp" secondAttribute="bottom" id="AwX-zL-yRm"/>
+                            <constraint firstItem="FzO-Zq-Iwp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BAE-Pi-GR6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FzO-Zq-Iwp" secondAttribute="trailing" constant="8" id="CPN-dN-TuI"/>
                             <constraint firstItem="FzO-Zq-Iwp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="K5J-Gh-lSQ"/>
                             <constraint firstItem="FzO-Zq-Iwp" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.09" id="KC5-fc-50l"/>
