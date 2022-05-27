@@ -6,14 +6,14 @@
 //
 
 import UIKit
-protocol Recipes {
-    func getRecipes(searchText: String, filter: String?)
-}
+
 protocol RecipeSearchViewProtocol: class {
     func reloadData() 
 }
-
-protocol RecipeSearchPresenterProtocol: Recipes {
+protocol RecipesProtocol {
+    func getRecipes(searchText: String, filter: String?)
+}
+protocol RecipeSearchPresenterProtocol: RecipesProtocol {
     var numberOfFilters: Int { get }
     var numberOfRecipes: Int { get }
     func configureFilterCell(cell: FilterCollectionViewCellProtocol, indexPath: IndexPath)
@@ -24,8 +24,8 @@ protocol RecipeSearchPresenterProtocol: Recipes {
 protocol RecipeSearchRouterProtocol {
     func  createModule()-> UIViewController
 }
-protocol RecipeSearchInputProtocol: Recipes {
-//    func getRecipes(searchText: String, filter: String?) 
+protocol RecipeSearchInputProtocol: RecipesProtocol {
+    func saveSearchText(_ searchText: String)
 }
 protocol RecipeSearchOutputProtocol {
     func getFetchedRecipes(recipes: [Recipe])

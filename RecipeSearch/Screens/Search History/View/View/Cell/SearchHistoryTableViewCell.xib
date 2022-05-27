@@ -18,8 +18,8 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtE-J9-Lfo">
-                        <rect key="frame" x="8" y="8" width="306" height="34"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="16" y="8" width="298" height="34"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -28,10 +28,13 @@
                     <constraint firstAttribute="bottom" secondItem="BtE-J9-Lfo" secondAttribute="bottom" constant="8" id="0ak-6L-HbG"/>
                     <constraint firstItem="BtE-J9-Lfo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="H0k-TA-Mzk"/>
                     <constraint firstAttribute="trailing" secondItem="BtE-J9-Lfo" secondAttribute="trailing" constant="8" id="OB5-To-6yD"/>
-                    <constraint firstItem="BtE-J9-Lfo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="U8d-d4-B4g"/>
+                    <constraint firstItem="BtE-J9-Lfo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="U8d-d4-B4g"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="searchHistoryLabel" destination="BtE-J9-Lfo" id="I9a-5x-qJB"/>
+            </connections>
             <point key="canvasLocation" x="-82.608695652173921" y="67.633928571428569"/>
         </tableViewCell>
     </objects>

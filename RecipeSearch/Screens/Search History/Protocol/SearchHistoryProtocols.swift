@@ -6,19 +6,28 @@
 //
 
 import UIKit
-protocol SearchHistoryViewProtocol {
-    
+protocol SearchHistoryViewProtocol: class {
+    func reloadData()
 }
-
-protocol SearchHistoryPresenterProtocol {
+protocol SearchHistoryProtocol {
+    func getSearchHistory()
+}
+protocol SearchHistoryPresenterProtocol: SearchHistoryProtocol {
+    var numberOfHistory: Int {get}
+    func getSearchHistory()
+    func configureSearchHistoryCell(cell: SearchHistoryTableViewCellProtocol, indexPath: IndexPath)
 }
 protocol SearchHistoryRouterProtocol {
     func  createModule()-> UIViewController
 }
-protocol SearchHistoryInputProtocol {
-    
+protocol SearchHistoryInputProtocol: SearchHistoryProtocol {
+  
 }
 protocol SearchHistoryOutputProtocol {
-    
+    func getSearchHistoryArray(_ searchHistoryArray: [String]?)
+}
+protocol SearchHistoryTableViewCellProtocol
+{
+    func configure(searchHistoryText: String)
 }
 

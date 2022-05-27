@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7C31F51665FD553DAEEB36DD /* Pods_RecipeSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF6EC6714612959CBD8A4396 /* Pods_RecipeSearch.framework */; };
 		96403F2D2840227F00818FE0 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96403F2C2840227F00818FE0 /* Filter.swift */; };
+		964BE06D284146A7007867B4 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964BE06C284146A7007867B4 /* Constant.swift */; };
 		964F3237283FF60900620120 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964F3235283FF60800620120 /* RecipeTableViewCell.swift */; };
 		964F3238283FF60900620120 /* RecipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 964F3236283FF60800620120 /* RecipeTableViewCell.xib */; };
 		964F323C283FF64000620120 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964F323A283FF64000620120 /* FilterCollectionViewCell.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		96403F2C2840227F00818FE0 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		964BE06C284146A7007867B4 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		964F3235283FF60800620120 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		964F3236283FF60800620120 /* RecipeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeTableViewCell.xib; sourceTree = "<group>"; };
 		964F323A283FF64000620120 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 			children = (
 				968C60B9283FDDB80055B426 /* API.swift */,
 				96403F2C2840227F00818FE0 /* Filter.swift */,
+				964BE06C284146A7007867B4 /* Constant.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				9658E57A283FD4CB0028E15C /* SceneDelegate.swift in Sources */,
 				964F323C283FF64000620120 /* FilterCollectionViewCell.swift in Sources */,
 				968C60CA283FE1D90055B426 /* Recipe.swift in Sources */,
+				964BE06D284146A7007867B4 /* Constant.swift in Sources */,
 				96C414C228404B7F0073BB8F /* SearchHistoryTableViewCell.swift in Sources */,
 				96C414D028404C010073BB8F /* SearchHistoryRouter.swift in Sources */,
 				96E1410E28410BCB00F07D08 /* RecipeSearchWorker.swift in Sources */,

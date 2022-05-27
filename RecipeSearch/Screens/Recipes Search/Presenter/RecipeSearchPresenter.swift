@@ -26,7 +26,8 @@ class RecipeSearchPresenter: RecipeSearchPresenterProtocol {
         self.recipes = []
     }
     func getRecipes(searchText: String, filter: String?) {
-        print("filer")
+        
+        interactor.saveSearchText(searchText)
         interactor.getRecipes(searchText: searchText, filter: filter)
     }
     

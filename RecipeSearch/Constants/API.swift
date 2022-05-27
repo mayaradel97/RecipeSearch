@@ -7,9 +7,7 @@
 
 import Foundation
 enum API: String {
-    
     case app_id = "27563205"
     case app_keys = "ada735b6e03e7a93c2d262b139faa4f9"
     case baseURL = "https://api.edamam.com/search?"
-//    let baseURL = "https://api.edamam.com/search?q=chicken&app_id=27563205&app_key=ada735b6e03e7a93c2d262b139faa4f9"
 }

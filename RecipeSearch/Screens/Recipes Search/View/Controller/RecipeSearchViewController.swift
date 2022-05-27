@@ -34,10 +34,12 @@ class RecipeSearchViewController: UIViewController {
         title = "Recipes Search"
         searchController = UISearchController(searchResultsController: SearchHistoryRouter().createModule())
         searchController.searchBar.placeholder = "Search..."
-       // searchController.searchResultsUpdater = self
+        searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
+        //change cancel button color
+        UIBarButtonItem.appearance(whenContainedInInstancesOf:[UISearchBar.self]).tintColor = #colorLiteral(red: 0, green: 0.6889460357, blue: 0, alpha: 1)
         navigationItem.searchController = searchController
         
     }

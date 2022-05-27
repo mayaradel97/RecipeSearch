@@ -16,3 +16,10 @@ extension RecipeSearchViewController: UISearchBarDelegate {
         self.dismiss(animated: true, completion: nil)
     }
 }
+extension RecipeSearchViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        searchController.searchResultsController?.view.isHidden = false
+    }
+    
+}
