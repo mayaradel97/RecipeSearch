@@ -41,19 +41,23 @@ class RecipeSearchPresenter: RecipeSearchPresenterProtocol {
         
     }
     func selectedRecipeRow(at indexPath: IndexPath) {
-        router.showRecipeDetails()
+        let recipe = recipes[indexPath.row].recipe
+        
+        router.showRecipeDetails(of: recipe)
     }
     //MARK:- Search text validation
     func searchTextValidation(_ searchText: String)-> Bool {
-        if searchText.isEmpty {
+        if searchText.isEmpty && view != nil{
             router.showAlert(with: "empty spaces are not allowed")
+            view?.failedData()
             return false
         }
         do {
             let regex = try NSRegularExpression(pattern: ".*[^A-Za-z0-9 ].*", options: [])
             let englishRegex =  regex.firstMatch(in: searchText, options: [], range: NSMakeRange(0, searchText.count))
-            if englishRegex != nil {
+            if englishRegex != nil && view != nil{
                 router.showAlert(with : "only english letters and spaces are allowed")
+                view?.failedData()
                 return false
             }
             else {

@@ -29,7 +29,7 @@ protocol RecipeSearchRouterProtocol {
     func start()
     func createModule()
     func showAlert(with message: String )
-    func showRecipeDetails()
+    func showRecipeDetails(of recipe: RecipeData)
 }
 protocol RecipeSearchInputProtocol: RecipesProtocol {
     func saveSearchText(_ searchText: String)

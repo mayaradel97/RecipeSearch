@@ -94,8 +94,8 @@
             filePath = "RecipeSearch/Screens/Recipes Search/Presenter/RecipeSearchPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "getFetchedRecipes(recipes:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,8 +126,8 @@
             filePath = "RecipeSearch/Screens/Recipes Search/Presenter/RecipeSearchPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "fetchedRecipesFailed()"
             landmarkType = "7">
          </BreakpointContent>
