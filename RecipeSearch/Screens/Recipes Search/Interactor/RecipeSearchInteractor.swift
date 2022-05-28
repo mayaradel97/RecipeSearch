@@ -19,12 +19,17 @@ class RecipeSearchInteractor: RecipeSearchInputProtocol {
     //MARK:- get recipes
     func getRecipes(searchText: String, filter: String?)  {
         worker.getRescipes(searchText: searchText, filter: filter) {[weak self] (fetchedRecipes) in
-            guard let recipes = fetchedRecipes?.hits ,
-                  let self = self
+            guard let self = self else {return}
+            guard let recipes = fetchedRecipes?.hits
             else {
-                print("nil")
-                return}
+                self.presenter.fetchedRecipesFailed()
+                return }
+            if recipes.count == 0 {
+                self.presenter.fetchedRecipesFailed()
+            }else {
+                print(searchText,filter)
             self.presenter.getFetchedRecipes(recipes: recipes)
+            }
             
         }
     }

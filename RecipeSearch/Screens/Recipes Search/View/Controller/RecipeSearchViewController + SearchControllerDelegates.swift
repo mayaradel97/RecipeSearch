@@ -12,7 +12,6 @@ extension RecipeSearchViewController: UISearchBarDelegate {
         else {return}
         self.searchControllerText = searchText
         presenter.getRecipes(searchText: searchText, filter: nil)
-        print(searchBar.text)
         self.dismiss(animated: true, completion: nil)
     }
 }

@@ -9,6 +9,7 @@ import UIKit
 class RecipeSearchViewController: UIViewController {
     //MARK:- Variables
     
+    @IBOutlet weak var noSearchView: UIStackView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var filterCollectionView: UICollectionView!
     @IBOutlet weak var recipesTableView: UITableView!
@@ -28,6 +29,7 @@ class RecipeSearchViewController: UIViewController {
     func visibilityOfUIElement()
     {
         self.loadingIndicator.stopAnimating()
+        self.noSearchView.isHidden = false
         self.filterCollectionView.isHidden = true
         self.recipesTableView.isHidden = true
     }
@@ -58,19 +60,30 @@ class RecipeSearchViewController: UIViewController {
 //MARK:- RecipeSearchViewProtocol
 extension RecipeSearchViewController: RecipeSearchViewProtocol
 {
+    var searchHistoryText: String {
+
+        get {
+            return searchControllerText
+        }
+        set {
+            searchControllerText = newValue
+        }
+    }
+    
     func showLoadingIndicator() {
         self.loadingIndicator.startAnimating()
-        //self.filterCollectionView.isHidden = true
-        //self.recipesTableView.isHidden = true
+        self.noSearchView.isHidden = true
     }
     
     func hideLoadingIndicator() {
-        self.loadingIndicator.startAnimating()
+        self.loadingIndicator.stopAnimating()
         self.filterCollectionView.isHidden = false
         self.recipesTableView.isHidden = false
-        self.loadingIndicator.stopAnimating()
     }
-    
+    func failedData() {
+        self.loadingIndicator.stopAnimating()
+        self.noSearchView.isHidden = false
+    }
     func reloadData() {
         self.recipesTableView.reloadData()
     }

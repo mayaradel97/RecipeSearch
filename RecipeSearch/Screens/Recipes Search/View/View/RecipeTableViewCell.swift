@@ -21,9 +21,15 @@ class RecipeTableViewCell: UITableViewCell, RecipeTableViewCellProtocol {
     @IBOutlet weak var recipeHealthLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.roundedCelll()
+        
     }
-
+    func roundedCelll() {
+        self.layer.cornerRadius = 10
+        self.clipsToBounds = true
+        self.layer.borderWidth = 5
+        self.layer.borderColor = #colorLiteral(red: 0.9547707805, green: 0.9547707805, blue: 0.9547707805, alpha: 1)
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }

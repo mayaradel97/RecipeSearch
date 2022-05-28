@@ -8,8 +8,10 @@
 import UIKit
 
 protocol RecipeSearchViewProtocol: class {
+    var searchHistoryText: String {get set}
     func showLoadingIndicator()
     func hideLoadingIndicator()
+    func failedData()
     func reloadData() 
 }
 protocol RecipesProtocol {
@@ -32,6 +34,7 @@ protocol RecipeSearchInputProtocol: RecipesProtocol {
 }
 protocol RecipeSearchOutputProtocol {
     func getFetchedRecipes(recipes: [Recipe])
+    func fetchedRecipesFailed()
 }
 protocol FilterCollectionViewCellProtocol {
     func configure(filter: Filter)

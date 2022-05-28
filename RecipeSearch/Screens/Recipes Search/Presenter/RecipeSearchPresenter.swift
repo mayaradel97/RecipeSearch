@@ -29,14 +29,14 @@ class RecipeSearchPresenter: RecipeSearchPresenterProtocol {
     }
     //MARK:- get recipes
     func getRecipes(searchText: String, filter: String?) {
+        guard let view = view else {return}
+        view.showLoadingIndicator()
         let searchTextWithoutSpaces = searchText.removeEmptySpace()
         if searchTextValidation(searchTextWithoutSpaces)
         {
             //add to history
             interactor.saveSearchText(searchTextWithoutSpaces)
             //get recipes
-            guard let view = self.view else {return}
-            view.showLoadingIndicator()
             interactor.getRecipes(searchText: searchTextWithoutSpaces, filter: filter)
         }
         
@@ -72,8 +72,10 @@ class RecipeSearchPresenter: RecipeSearchPresenterProtocol {
     {
         if let data = notifications.userInfo
         {
-            guard let selectedSearchHistory = data[Constant.selectedSearchHistory.rawValue] as? String
+            guard let selectedSearchHistory = data[Constant.selectedSearchHistory.rawValue] as? String,
+                  let view = view
             else {return}
+            view.searchHistoryText = selectedSearchHistory
             self.getRecipes(searchText: selectedSearchHistory, filter: nil)
             
         }
@@ -97,6 +99,8 @@ class RecipeSearchPresenter: RecipeSearchPresenterProtocol {
 //MARK:- RecipeSearchOutputProtocol
 extension RecipeSearchPresenter: RecipeSearchOutputProtocol
 {
+    
+    
     func getFetchedRecipes(recipes: [Recipe]) {
         self.recipes = recipes
         print(recipes.count)
@@ -104,4 +108,10 @@ extension RecipeSearchPresenter: RecipeSearchOutputProtocol
         view.hideLoadingIndicator()
         view.reloadData()
     }
+    func fetchedRecipesFailed() {
+        guard let view = self.view else {return}
+        view.failedData()
+        router.showAlert(with: "An error occurred")
+    }
+    
 }
