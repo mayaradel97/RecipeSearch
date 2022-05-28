@@ -8,7 +8,6 @@
 import UIKit
 class RecipeSearchViewController: UIViewController {
     //MARK:- Variables
-    
     @IBOutlet weak var noSearchView: UIStackView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var filterCollectionView: UICollectionView!
@@ -18,7 +17,7 @@ class RecipeSearchViewController: UIViewController {
     var filterCollectionViewCell: String!
     var recipeTableViewCell: String!
     var searchControllerText: String!
-    
+    var currentSelectedFilter = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         self.cellsRegisteration()
@@ -86,5 +85,6 @@ extension RecipeSearchViewController: RecipeSearchViewProtocol
     }
     func reloadData() {
         self.recipesTableView.reloadData()
+        self.filterCollectionView.reloadData()
     }
 }

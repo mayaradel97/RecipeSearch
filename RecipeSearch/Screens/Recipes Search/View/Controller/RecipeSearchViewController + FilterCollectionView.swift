@@ -20,6 +20,13 @@ extension RecipeSearchViewController : UICollectionViewDataSource
        else {
         return UICollectionViewCell()
         }
+//        filterCell.contentView.backgroundColor = nil
+        print("cell \(indexPath.row)")
+//        if currentSelectedFilter == 0
+//        {
+//            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
+//        }
+        filterCell.contentView.backgroundColor =  currentSelectedFilter == indexPath.row ? .lightGray : nil
         presenter.configureFilterCell(cell: filterCell,indexPath: indexPath)
         return filterCell
     }
@@ -31,10 +38,13 @@ extension RecipeSearchViewController : UICollectionViewDataSource
 extension RecipeSearchViewController: UICollectionViewDelegate
 {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("ded \(indexPath.row)")
+        currentSelectedFilter = indexPath.row
+
         let filter =  presenter.getFilterName(at: indexPath)
         presenter.getRecipes(searchText: searchControllerText, filter: filter)
         //change color
-        collectionView.cellForItem(at: indexPath)?.contentView.backgroundColor = .lightGray
+       // collectionView.cellForItem(at: indexPath)?.contentView.backgroundColor = .lightGray
     }
 }
 extension RecipeSearchViewController: UICollectionViewDelegateFlowLayout

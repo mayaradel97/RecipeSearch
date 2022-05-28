@@ -36,7 +36,7 @@ class RecipeTableViewCell: UITableViewCell, RecipeTableViewCellProtocol {
     func configure(recipe: RecipeData) {
         self.recipeTitleLabel.text = recipe.label
         self.recipeSourceLabel.text = recipe.source
-        self.recipeHealthLabel.text = recipe.healthLabels.joined(separator: " | ")
+        self.recipeHealthLabel.text = recipe.healthLabels.joined(separator: "  |  ")
         self.recipeImageView.sd_setImage(with: URL(string: recipe.image))
     }
     
