@@ -5,7 +5,7 @@
 //  Created by Mayar Adel on 5/26/22.
 //
 
-import UIKit
+import Foundation
 
 protocol RecipeSearchViewProtocol: class {
     var searchHistoryText: String {get set}
@@ -23,12 +23,13 @@ protocol RecipeSearchPresenterProtocol: RecipesProtocol {
     func configureFilterCell(cell: FilterCollectionViewCellProtocol, indexPath: IndexPath)
     func configureRecipeCell(cell: RecipeTableViewCellProtocol, indexPath: IndexPath)
     func getFilterName(at indexPath: IndexPath)-> String?
-    
+    func selectedRecipeRow(at indexPath: IndexPath)
 }
 protocol RecipeSearchRouterProtocol {
     func start()
     func createModule()
     func showAlert(with message: String )
+    func showRecipeDetails()
 }
 protocol RecipeSearchInputProtocol: RecipesProtocol {
     func saveSearchText(_ searchText: String)

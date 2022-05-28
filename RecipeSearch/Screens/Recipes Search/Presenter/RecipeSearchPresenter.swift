@@ -40,6 +40,9 @@ class RecipeSearchPresenter: RecipeSearchPresenterProtocol {
         }
         
     }
+    func selectedRecipeRow(at indexPath: IndexPath) {
+        router.showRecipeDetails()
+    }
     //MARK:- Search text validation
     func searchTextValidation(_ searchText: String)-> Bool {
         if searchText.isEmpty {
@@ -63,8 +66,6 @@ class RecipeSearchPresenter: RecipeSearchPresenterProtocol {
             
         }
     }
-    //MARK:- search from history
-
     //MARK:- cells configuration
     func configureFilterCell(cell: FilterCollectionViewCellProtocol,indexPath: IndexPath) {
         cell.configure(filter: filtersArray[indexPath.row])

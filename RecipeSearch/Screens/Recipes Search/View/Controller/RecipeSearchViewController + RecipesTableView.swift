@@ -29,6 +29,9 @@ extension RecipeSearchViewController: UITableViewDataSource
 
 extension RecipeSearchViewController: UITableViewDelegate
 {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.selectedRecipeRow(at: indexPath)
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         230
     }

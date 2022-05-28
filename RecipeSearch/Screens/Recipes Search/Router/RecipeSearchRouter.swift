@@ -16,7 +16,10 @@ class RecipeSearchRouter: RecipeSearchRouterProtocol {
         self.window = window
         navigationController = UINavigationController()
     }
-    
+    func showRecipeDetails()
+    {
+        self.navigationController.pushViewController(RecipeDetailsRouter().createModule(), animated: true)
+    }
     func start() {
         self.createModule()
         window.rootViewController = navigationController
