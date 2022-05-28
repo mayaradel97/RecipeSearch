@@ -19,7 +19,7 @@ protocol SearchHistoryPresenterProtocol: SearchHistoryProtocol {
     func selectedHistoryRow(at indexPath: IndexPath)
 }
 protocol SearchHistoryRouterProtocol {
-    func  createModule()-> UIViewController
+    func  createModule(delegate: SearchHistoryDelegate)-> UIViewController
 }
 protocol SearchHistoryInputProtocol: SearchHistoryProtocol {
   

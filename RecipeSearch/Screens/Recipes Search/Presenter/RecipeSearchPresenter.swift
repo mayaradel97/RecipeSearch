@@ -25,7 +25,6 @@ class RecipeSearchPresenter: RecipeSearchPresenterProtocol {
         self.interactor = interactor
         self.router = router
         self.recipes = []
-        self.addObserverToSelectedSearchHistory()
     }
     //MARK:- get recipes
     func getRecipes(searchText: String, filter: String?) {
@@ -65,22 +64,7 @@ class RecipeSearchPresenter: RecipeSearchPresenterProtocol {
         }
     }
     //MARK:- search from history
-    func addObserverToSelectedSearchHistory() {
-        NotificationCenter.default.addObserver(self, selector: #selector(searchFromHistory(_:)), name: NSNotification.Name(rawValue: Constant.searchHistory.rawValue), object: nil)
-    }
-    @objc func searchFromHistory(_ notifications: Notification)
-    {
-        if let data = notifications.userInfo
-        {
-            guard let selectedSearchHistory = data[Constant.selectedSearchHistory.rawValue] as? String,
-                  let view = view
-            else {return}
-            view.searchHistoryText = selectedSearchHistory
-            self.getRecipes(searchText: selectedSearchHistory, filter: nil)
-            
-        }
-    }
-    
+
     //MARK:- cells configuration
     func configureFilterCell(cell: FilterCollectionViewCellProtocol,indexPath: IndexPath) {
         cell.configure(filter: filtersArray[indexPath.row])
@@ -113,5 +97,17 @@ extension RecipeSearchPresenter: RecipeSearchOutputProtocol
         view.failedData()
         router.showAlert(with: "An error occurred")
     }
+    
+}
+//MARK:- search from history
+extension RecipeSearchPresenter: SearchHistoryDelegate
+{
+    func searchFromHistory(with selectedSearchHistory: String) {
+       guard let view = view
+  else {return}
+  view.searchHistoryText = selectedSearchHistory
+  self.getRecipes(searchText: selectedSearchHistory, filter: nil)
+    }
+    
     
 }

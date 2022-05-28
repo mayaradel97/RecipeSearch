@@ -26,7 +26,8 @@ protocol RecipeSearchPresenterProtocol: RecipesProtocol {
     
 }
 protocol RecipeSearchRouterProtocol {
-    func  createModule()-> UIViewController
+    func start()
+    func createModule()
     func showAlert(with message: String )
 }
 protocol RecipeSearchInputProtocol: RecipesProtocol {

@@ -44,7 +44,7 @@ class RecipeSearchViewController: UIViewController {
     //MARK:- search controller
     func searchControllerConfiguration() {
         title = "Recipes Search"
-        searchController = UISearchController(searchResultsController: SearchHistoryRouter().createModule())
+//        searchController = UISearchController(searchResultsController: SearchHistoryRouter().createModule())
         searchController.searchBar.placeholder = "Search..."
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self

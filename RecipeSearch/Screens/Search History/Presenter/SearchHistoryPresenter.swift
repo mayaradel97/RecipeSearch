@@ -12,6 +12,7 @@ class SearchHistoryPresenter: SearchHistoryPresenterProtocol
     private var interactor: SearchHistoryInteractor
     private var router: SearchHistoryRouter
     private var searchHistoryArray: [String]
+    var searchHistoryDelegate: SearchHistoryDelegate?
     var numberOfHistory: Int {
         return searchHistoryArray.count
     }
@@ -25,9 +26,9 @@ class SearchHistoryPresenter: SearchHistoryPresenterProtocol
         interactor.getSearchHistory()
     }
     func selectedHistoryRow(at indexPath: IndexPath) {
-        //notifyWithSelectedSearchHistory
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constant.searchHistory.rawValue), object: nil, userInfo: [Constant.selectedSearchHistory.rawValue: searchHistoryArray[indexPath.row
-        ]])
+        guard let searchHistoryDelegate = searchHistoryDelegate
+        else {return}
+        searchHistoryDelegate.searchFromHistory(with: searchHistoryArray[indexPath.row])
         print(searchHistoryArray[indexPath.row
         ])
     }
