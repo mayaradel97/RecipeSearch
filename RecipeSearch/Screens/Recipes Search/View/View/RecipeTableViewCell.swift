@@ -37,7 +37,9 @@ class RecipeTableViewCell: UITableViewCell, RecipeTableViewCellProtocol {
         self.recipeTitleLabel.text = recipe.label
         self.recipeSourceLabel.text = recipe.source
         self.recipeHealthLabel.text = recipe.healthLabels.joined(separator: "  |  ")
+        self.recipeImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
         self.recipeImageView.sd_setImage(with: URL(string: recipe.image))
+        
     }
     
 }

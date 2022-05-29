@@ -15,11 +15,13 @@ protocol RecipeDetailsPresenterProtocol {
     var imageURL: String {get}
     func configureRecipeIngredientsCell(cell: SearchHistoryTableViewCellProtocol, at indexPath: IndexPath)
     func showRecipeWebsite()
+    func shareRecipeURL()
     
 }
 protocol RecipeDetailsRouterProtocol {
    func createModule(with recipe: RecipeData)-> UIViewController
     func showRecipeWebsite(with url: String)
+    func shareRecipeURL(with url: String)
 }
 protocol RecipeDetailsInputProtocol {
   

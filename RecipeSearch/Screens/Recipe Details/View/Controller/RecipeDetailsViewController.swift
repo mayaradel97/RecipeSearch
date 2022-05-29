@@ -36,11 +36,12 @@ class RecipeDetailsViewController: UIViewController {
         navigationItem.rightBarButtonItem = shareButton
     }
     @objc func shareButtonTapped() {
-        print("pressed")
+        self.presenter.shareRecipeURL()
     }
     
     func setRecipeDetailsToUIElement() {
         self.recipeTitleLabel.text = presenter.recipeTitle
+        self.recipeImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
         self.recipeImageView.sd_setImage(with: URL(string: presenter.imageURL), completed: nil)
     }
     @IBAction func recipeWebsiteButtonTapped(_ sender: UIButton) {

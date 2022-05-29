@@ -18,13 +18,15 @@ class RecipeSearchRouter: RecipeSearchRouterProtocol {
         self.window = window
         navigationController = UINavigationController()
     }
+    
   //MARK:- Application start
     func start() {
         self.createModule()
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
-    //MARK:- recipe search module
+    
+    //MARK:- module creation
     func createModule() {
         let view: RecipeSearchViewController = .instantiate(storyboardName: "RecipeSearchStoryboard")
         let interactor = RecipeSearchInteractor()
@@ -37,7 +39,8 @@ class RecipeSearchRouter: RecipeSearchRouterProtocol {
         self.view = view
         
     }
-    //MARK:- navigation to recipe details
+    
+    //MARK:- navigation 
     func showRecipeDetails(of recipe: RecipeData)
     {
         let recipeDetailsRouter = RecipeDetailsRouter()
