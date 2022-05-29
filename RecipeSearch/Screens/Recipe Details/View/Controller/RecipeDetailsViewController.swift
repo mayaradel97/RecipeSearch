@@ -44,6 +44,7 @@ class RecipeDetailsViewController: UIViewController {
         self.recipeImageView.sd_setImage(with: URL(string: presenter.imageURL), completed: nil)
     }
     @IBAction func recipeWebsiteButtonTapped(_ sender: UIButton) {
+        self.presenter.showRecipeWebsite()
     }
 }
 extension RecipeDetailsViewController: RecipeDetailsViewProtocol {

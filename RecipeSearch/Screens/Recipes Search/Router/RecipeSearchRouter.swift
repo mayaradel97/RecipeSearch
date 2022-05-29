@@ -8,25 +8,23 @@
 import UIKit
 class RecipeSearchRouter: RecipeSearchRouterProtocol {
     
-    
+    //MARK:- variables
     private let window: UIWindow
     private var view: UIViewController!
-   private var navigationController: UINavigationController
+    private var navigationController: UINavigationController
+    
+    //MARK:- init
     init(window: UIWindow) {
         self.window = window
         navigationController = UINavigationController()
     }
-    func showRecipeDetails(of recipe: RecipeData)
-    {
-        let recipeDetailsRouter = RecipeDetailsRouter()
-            .createModule(with: recipe)
-        self.navigationController.pushViewController(recipeDetailsRouter, animated: true)
-    }
+  //MARK:- Application start
     func start() {
         self.createModule()
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
+    //MARK:- recipe search module
     func createModule() {
         let view: RecipeSearchViewController = .instantiate(storyboardName: "RecipeSearchStoryboard")
         let interactor = RecipeSearchInteractor()
@@ -39,7 +37,16 @@ class RecipeSearchRouter: RecipeSearchRouterProtocol {
         self.view = view
         
     }
+    //MARK:- navigation to recipe details
+    func showRecipeDetails(of recipe: RecipeData)
+    {
+        let recipeDetailsRouter = RecipeDetailsRouter()
+            .createModule(with: recipe)
+        self.navigationController.pushViewController(recipeDetailsRouter, animated: true)
+    }
+    //MARK:- Alert
     func showAlert(with message: String )  {
         self.view.showAlert(with: message)
     }
+   
 }

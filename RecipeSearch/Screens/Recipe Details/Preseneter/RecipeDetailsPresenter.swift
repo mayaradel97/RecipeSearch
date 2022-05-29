@@ -8,6 +8,8 @@
 import Foundation
 class RecipeDetailsPresenter: RecipeDetailsPresenterProtocol {
    
+    
+   
     //MARK:- Variables
     private weak var view: RecipeDetailsViewProtocol?
     private var interactor: RecipeDetailsInputProtocol
@@ -31,6 +33,9 @@ class RecipeDetailsPresenter: RecipeDetailsPresenterProtocol {
     func configureRecipeIngredientsCell(cell: SearchHistoryTableViewCellProtocol, at indexPath: IndexPath) {
         let recipeIngredient = recipeDetails.ingredientLines[indexPath.row]
         cell.configure(searchHistoryText: recipeIngredient)
+    }
+    func showRecipeWebsite() {
+        self.router.showRecipeWebsite(with: recipeDetails.url)
     }
     
 }
