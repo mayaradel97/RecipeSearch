@@ -6,6 +6,8 @@
 //
 
 import UIKit
+
+//MARK:- UITableViewDataSource
 extension RecipeSearchViewController: UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -26,7 +28,7 @@ extension RecipeSearchViewController: UITableViewDataSource
     }
     
 }
-
+//MARK:- UITableViewDelegate
 extension RecipeSearchViewController: UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -35,5 +37,5 @@ extension RecipeSearchViewController: UITableViewDelegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         230
     }
-
+    
 }

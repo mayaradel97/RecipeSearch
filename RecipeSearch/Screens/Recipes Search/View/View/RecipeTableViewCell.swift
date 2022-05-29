@@ -8,17 +8,12 @@
 import UIKit
 import SDWebImage
 class RecipeTableViewCell: UITableViewCell, RecipeTableViewCellProtocol {
-
     
-  
-
     @IBOutlet weak var recipeImageView: UIImageView!
-    
     @IBOutlet weak var recipeTitleLabel: UILabel!
-    
     @IBOutlet weak var recipeSourceLabel: UILabel!
-    
     @IBOutlet weak var recipeHealthLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.roundedCelll()
@@ -29,9 +24,6 @@ class RecipeTableViewCell: UITableViewCell, RecipeTableViewCellProtocol {
         self.clipsToBounds = true
         self.layer.borderWidth = 5
         self.layer.borderColor = #colorLiteral(red: 0.9547707805, green: 0.9547707805, blue: 0.9547707805, alpha: 1)
-    }
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
     }
     func configure(recipe: RecipeData) {
         self.recipeTitleLabel.text = recipe.label

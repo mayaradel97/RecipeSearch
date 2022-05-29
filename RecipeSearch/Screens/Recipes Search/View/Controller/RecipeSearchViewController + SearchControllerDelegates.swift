@@ -6,6 +6,7 @@
 //
 
 import UIKit
+//MARK:- UISearchBarDelegate
 extension RecipeSearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchText = searchBar.text
@@ -16,6 +17,7 @@ extension RecipeSearchViewController: UISearchBarDelegate {
         self.dismiss(animated: true, completion: nil)
     }
 }
+//MARK:- UISearchResultsUpdating
 extension RecipeSearchViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -24,7 +26,6 @@ extension RecipeSearchViewController: UISearchResultsUpdating {
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.visibilityOfUIElement()
-        print("cancel")
     }
     
 }

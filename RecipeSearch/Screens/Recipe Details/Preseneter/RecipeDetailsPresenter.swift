@@ -7,24 +7,18 @@
 
 import Foundation
 class RecipeDetailsPresenter: RecipeDetailsPresenterProtocol {
+    
     //MARK:- Variables
     private weak var view: RecipeDetailsViewProtocol?
-    private var interactor: RecipeDetailsInputProtocol
     private var router: RecipeDetailsRouterProtocol
     private var recipeDetails: RecipeData
     var numberOfIngredients: Int {
         return recipeDetails.ingredientLines.count
     }
-    var recipeTitle: String {
-        return recipeDetails.label
-    }
-    var imageURL: String {
-        return recipeDetails.image
-    }
+    
     //MARK:- init
-    init(view: RecipeDetailsViewProtocol, interactor: RecipeDetailsInputProtocol, router: RecipeDetailsRouterProtocol,recipe: RecipeData) {
+    init(view: RecipeDetailsViewProtocol, router: RecipeDetailsRouterProtocol,recipe: RecipeData) {
         self.view = view
-        self.interactor = interactor
         self.router = router
         self.recipeDetails = recipe
     }
@@ -32,6 +26,11 @@ class RecipeDetailsPresenter: RecipeDetailsPresenterProtocol {
     func configureRecipeIngredientsCell(cell: SearchHistoryTableViewCellProtocol, at indexPath: IndexPath) {
         let recipeIngredient = recipeDetails.ingredientLines[indexPath.row]
         cell.configure(searchHistoryText: recipeIngredient)
+    }
+    //MARK:- Recipe data
+    func getRecipeData() {
+        guard let view = view else {return}
+        view.getRecipe(title: recipeDetails.label, imageURL: recipeDetails.image)
     }
     //MARK:- open website
     func showRecipeWebsite() {
@@ -43,6 +42,4 @@ class RecipeDetailsPresenter: RecipeDetailsPresenterProtocol {
     }
     
 }
-extension RecipeDetailsPresenter: RecipeDetailsOutputProtocol {
-    
-}
+

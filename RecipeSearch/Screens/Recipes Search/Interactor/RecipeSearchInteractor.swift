@@ -12,10 +12,12 @@ class RecipeSearchInteractor: RecipeSearchInputProtocol {
     private var worker: RecipeSearchWorker
     private var userDefault: UserDefaults
     
+    //MARK:- init
     init() {
         worker = RecipeSearchWorker()
         userDefault = UserDefaults.standard
     }
+    
     //MARK:- get recipes
     func getRecipes(searchText: String, filter: String?)  {
         worker.getRescipes(searchText: searchText, filter: filter) {[weak self] (fetchedRecipes) in
@@ -27,8 +29,7 @@ class RecipeSearchInteractor: RecipeSearchInputProtocol {
             if recipes.count == 0 {
                 self.presenter.fetchedRecipesFailed()
             }else {
-                print(searchText,filter)
-            self.presenter.getFetchedRecipes(recipes: recipes)
+                self.presenter.getFetchedRecipes(recipes: recipes)
             }
             
         }
@@ -44,12 +45,12 @@ class RecipeSearchInteractor: RecipeSearchInputProtocol {
                 SavedHistoryArray.removeLast()
             }
             //remove repeated element
-            if SavedHistoryArray.contains(searchText){
-                SavedHistoryArray =  SavedHistoryArray.filter{$0 != searchText}
+            if SavedHistoryArray.contains(where: {$0.compareWithCaseSensitive(searchText)}){
+                SavedHistoryArray =  SavedHistoryArray.filter{!$0.compareWithCaseSensitive(searchText)}
             }
+            
             historyArray.append(contentsOf: SavedHistoryArray)
         }
-        print(historyArray)
         userDefault.setValue(historyArray, forKey: Constant.historyArray.rawValue)
     }
     

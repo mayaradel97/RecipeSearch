@@ -8,6 +8,4 @@
 import Foundation
 enum Constant: String {
     case historyArray
-    case searchHistory
-    case selectedSearchHistory
 }

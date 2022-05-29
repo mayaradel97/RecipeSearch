@@ -19,7 +19,7 @@ class RecipeSearchRouter: RecipeSearchRouterProtocol {
         navigationController = UINavigationController()
     }
     
-  //MARK:- Application start
+    //MARK:- Application start
     func start() {
         self.createModule()
         window.rootViewController = navigationController
@@ -33,7 +33,7 @@ class RecipeSearchRouter: RecipeSearchRouterProtocol {
         let presenter = RecipeSearchPresenter(view: view, router: self, interactor: interactor)
         interactor.presenter = presenter
         view.presenter = presenter
-        let searchHistoryRouter = SearchHistoryRouter().createModule(delegate: presenter)
+        let searchHistoryRouter = SearchHistoryRouter().createModule(delegate: view)
         view.searchController = UISearchController(searchResultsController: searchHistoryRouter)
         navigationController.setViewControllers([view], animated: true)
         self.view = view
@@ -51,5 +51,5 @@ class RecipeSearchRouter: RecipeSearchRouterProtocol {
     func showAlert(with message: String )  {
         self.view.showAlert(with: message)
     }
-   
+    
 }

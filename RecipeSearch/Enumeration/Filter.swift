@@ -6,9 +6,6 @@
 //
 
 import Foundation
-//struct Filter {
-//    let name: String
-//}
 enum Filter: String
 {
     case ALL
@@ -24,9 +21,9 @@ enum Filter: String
         case .LowSugar:
             return "low-sugar"
         case .Keto:
-           return "keto-friendly"
+            return "keto-friendly"
         case .Vegan:
-        return "vegan"
+            return "vegan"
         }
     }
 }

@@ -11,3 +11,4 @@ enum API: String {
     case app_keys = "ada735b6e03e7a93c2d262b139faa4f9"
     case baseURL = "https://api.edamam.com/search?"
 }
+

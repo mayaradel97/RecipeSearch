@@ -15,11 +15,11 @@ class SearchHistoryInteractor: SearchHistoryInputProtocol {
     }
     
     func getSearchHistory() {
-       guard let savedSearchHistory = userDefaults.stringArray(forKey: Constant.historyArray.rawValue)
-       else {
-        presenter.getSearchHistoryArray(nil)
-        return
-       }
+        guard let savedSearchHistory = userDefaults.stringArray(forKey: Constant.historyArray.rawValue)
+        else {
+            presenter.getSearchHistoryArray(nil)
+            return
+        }
         presenter.getSearchHistoryArray(savedSearchHistory)
     }
     

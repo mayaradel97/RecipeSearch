@@ -19,11 +19,8 @@ class RecipeDetailsRouter: RecipeDetailsRouterProtocol {
     
     //MARK:- module creation
     func createModule(with recipe: RecipeData ) -> UIViewController {
-        
-        let interactor = RecipeDetailsInteractor()
-        let presenter = RecipeDetailsPresenter(view: view, interactor: interactor, router: self, recipe: recipe)
+        let presenter = RecipeDetailsPresenter(view: view, router: self, recipe: recipe)
         view.presenter = presenter
-        interactor.presenter = presenter
         return view
     }
     

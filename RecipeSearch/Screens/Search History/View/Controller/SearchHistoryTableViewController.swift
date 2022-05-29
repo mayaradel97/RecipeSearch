@@ -8,36 +8,41 @@
 import UIKit
 
 class SearchHistoryTableViewController: UITableViewController {
+    // MARK: - variables
     var presenter: SearchHistoryPresenter!
     private var searchHistoryCell: String!
+    
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         self.cellRegisteration()
-       
+        
     }
+    // MARK: - viewWillAppear
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
         presenter.getSearchHistory()
     }
-
+    
+    // MARK: - cellRegisteration
     func cellRegisteration() {
         searchHistoryCell = String(describing: SearchHistoryTableViewCell.self)
         self.tableView.register(UINib(nibName: searchHistoryCell, bundle: nil), forCellReuseIdentifier: searchHistoryCell)
     }
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
+        
         return presenter.numberOfHistory
     }
-
-   
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       guard let cell = tableView.dequeueReusableCell(withIdentifier: searchHistoryCell, for: indexPath) as? SearchHistoryTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: searchHistoryCell, for: indexPath) as? SearchHistoryTableViewCell
         else {
-        return UITableViewCell()
-        
-       }
+            return UITableViewCell()
+            
+        }
         presenter.configureSearchHistoryCell(cell: cell, indexPath: indexPath)
         return cell
     }
@@ -50,8 +55,8 @@ class SearchHistoryTableViewController: UITableViewController {
         50
     }
 }
-extension SearchHistoryTableViewController: SearchHistoryViewProtocol
-{
+// MARK: - SearchHistoryViewProtocol
+extension SearchHistoryTableViewController: SearchHistoryViewProtocol {
     func reloadData() {
         self.tableView.reloadData()
     }

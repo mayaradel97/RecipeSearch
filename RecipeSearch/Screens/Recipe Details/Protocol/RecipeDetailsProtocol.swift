@@ -7,25 +7,19 @@
 
 import UIKit
 protocol RecipeDetailsViewProtocol: class {
-   
+    func getRecipe(title: String, imageURL: String)
 }
 protocol RecipeDetailsPresenterProtocol {
     var numberOfIngredients: Int {get}
-    var recipeTitle: String {get}
-    var imageURL: String {get}
+    func getRecipeData()
     func configureRecipeIngredientsCell(cell: SearchHistoryTableViewCellProtocol, at indexPath: IndexPath)
     func showRecipeWebsite()
     func shareRecipeURL()
     
 }
 protocol RecipeDetailsRouterProtocol {
-   func createModule(with recipe: RecipeData)-> UIViewController
+    func createModule(with recipe: RecipeData)-> UIViewController
     func showRecipeWebsite(with url: String)
     func shareRecipeURL(with url: String)
-}
-protocol RecipeDetailsInputProtocol {
-  
-}
-protocol RecipeDetailsOutputProtocol {
 }
 

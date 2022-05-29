@@ -6,8 +6,9 @@
 //
 
 import Foundation
-class SearchHistoryPresenter: SearchHistoryPresenterProtocol
-{
+class SearchHistoryPresenter: SearchHistoryPresenterProtocol {
+    
+    //MARK: - variables
     private weak var view: SearchHistoryTableViewController?
     private var interactor: SearchHistoryInteractor
     private var router: SearchHistoryRouter
@@ -16,31 +17,36 @@ class SearchHistoryPresenter: SearchHistoryPresenterProtocol
     var numberOfHistory: Int {
         return searchHistoryArray.count
     }
+    //MARK: - init
     init( view: SearchHistoryTableViewController, interactor: SearchHistoryInteractor ,router: SearchHistoryRouter) {
         self.view = view
         self.interactor = interactor
         self.router = router
         self.searchHistoryArray = []
     }
+    
+    //MARK: - loading search history
     func getSearchHistory(){
         interactor.getSearchHistory()
     }
+    
+    //MARK: - search from history
     func selectedHistoryRow(at indexPath: IndexPath) {
         guard let searchHistoryDelegate = searchHistoryDelegate
         else {return}
         searchHistoryDelegate.searchFromHistory(with: searchHistoryArray[indexPath.row])
-        print(searchHistoryArray[indexPath.row
-        ])
     }
-    func configureSearchHistoryCell(cell: SearchHistoryTableViewCellProtocol, indexPath: IndexPath)
-    {
+    //MARK: - cell configuration
+    func configureSearchHistoryCell(cell: SearchHistoryTableViewCellProtocol, indexPath: IndexPath) {
         cell.configure(searchHistoryText: searchHistoryArray[indexPath.row])
         
     }
     
 }
-extension SearchHistoryPresenter: SearchHistoryOutputProtocol
-{
+
+
+//MARK: - SearchHistoryOutputProtocol
+extension SearchHistoryPresenter: SearchHistoryOutputProtocol {
     func getSearchHistoryArray(_ searchHistoryArray: [String]?) {
         guard let historyArray = searchHistoryArray,
               let view = view

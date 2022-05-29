@@ -8,6 +8,7 @@
 import Foundation
 
 class RecipeSearchPresenter: RecipeSearchPresenterProtocol {
+    
     //MARK:- Variables
     private weak var view: RecipeSearchViewProtocol?
     private var router: RecipeSearchRouterProtocol
@@ -20,12 +21,16 @@ class RecipeSearchPresenter: RecipeSearchPresenterProtocol {
     var numberOfRecipes: Int {
         return recipes.count
     }
+    
+    //MARK:- init
     init (view: RecipeSearchViewProtocol, router: RecipeSearchRouterProtocol, interactor: RecipeSearchInputProtocol) {
         self.view = view
         self.interactor = interactor
         self.router = router
         self.recipes = []
     }
+    
+    
     //MARK:- get recipes
     func getRecipes(searchText: String, filter: String?) {
         guard let view = view else {return}
@@ -40,11 +45,14 @@ class RecipeSearchPresenter: RecipeSearchPresenterProtocol {
         }
         
     }
+    //MARK:- recipe details
     func selectedRecipeRow(at indexPath: IndexPath) {
         let recipe = recipes[indexPath.row].recipe
         
         router.showRecipeDetails(of: recipe)
     }
+    
+    
     //MARK:- Search text validation
     func searchTextValidation(_ searchText: String)-> Bool {
         if searchText.isEmpty && view != nil{
@@ -65,11 +73,11 @@ class RecipeSearchPresenter: RecipeSearchPresenterProtocol {
             }
         }
         catch {
-            print("ERROR")
             return false
             
         }
     }
+    
     //MARK:- cells configuration
     func configureFilterCell(cell: FilterCollectionViewCellProtocol,indexPath: IndexPath) {
         cell.configure(filter: filtersArray[indexPath.row])
@@ -92,7 +100,6 @@ extension RecipeSearchPresenter: RecipeSearchOutputProtocol
     
     func getFetchedRecipes(recipes: [Recipe]) {
         self.recipes = recipes
-        print(recipes.count)
         guard let view = self.view else {return}
         view.hideLoadingIndicator()
         view.reloadData()
@@ -100,19 +107,7 @@ extension RecipeSearchPresenter: RecipeSearchOutputProtocol
     func fetchedRecipesFailed() {
         guard let view = self.view else {return}
         view.failedData()
-        router.showAlert(with: "An error occurred")
+        router.showAlert(with: "An error occurred please try again")
     }
-    
-}
-//MARK:- search from history
-extension RecipeSearchPresenter: SearchHistoryDelegate
-{
-    func searchFromHistory(with selectedSearchHistory: String) {
-       guard let view = view
-  else {return}
-  view.searchHistoryText = selectedSearchHistory
-  self.getRecipes(searchText: selectedSearchHistory, filter: nil)
-    }
-    
     
 }

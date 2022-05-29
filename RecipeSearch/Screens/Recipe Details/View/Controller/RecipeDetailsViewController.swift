@@ -9,24 +9,26 @@ import UIKit
 import SDWebImage
 class RecipeDetailsViewController: UIViewController {
     
+    //MARK: - variables
     @IBOutlet weak var recipeImageView: UIImageView!
-    
     @IBOutlet weak var recipeTitleLabel: UILabel!
-    
     @IBOutlet weak var recipeIngredientsTableView: UITableView!
     var presenter: RecipeDetailsPresenterProtocol!
-     var recipeIngredientsTableViewCell: String!
+    var recipeIngredientsTableViewCell: String!
+    
+    //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureUIElements()
         self.cellRegisteration()
-        self.setRecipeDetailsToUIElement()
-        print(presenter.numberOfIngredients)
+        self.presenter.getRecipeData()
     }
+    //MARK: - cell registeration
     func cellRegisteration() {
         recipeIngredientsTableViewCell = String(describing: SearchHistoryTableViewCell.self)
         self.recipeIngredientsTableView.register(UINib(nibName: recipeIngredientsTableViewCell, bundle: nil), forCellReuseIdentifier: recipeIngredientsTableViewCell)
     }
+    //MARK: - UI configuration
     func configureUIElements() {
         title = "Recipe Details"
         recipeIngredientsTableView.tableFooterView = UIView()
@@ -35,19 +37,27 @@ class RecipeDetailsViewController: UIViewController {
         let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareButtonTapped))
         navigationItem.rightBarButtonItem = shareButton
     }
+    
+    
+    //MARK: - share button
     @objc func shareButtonTapped() {
         self.presenter.shareRecipeURL()
     }
     
-    func setRecipeDetailsToUIElement() {
-        self.recipeTitleLabel.text = presenter.recipeTitle
-        self.recipeImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
-        self.recipeImageView.sd_setImage(with: URL(string: presenter.imageURL), completed: nil)
-    }
+    
+    //MARK: - recipeWebsite button
     @IBAction func recipeWebsiteButtonTapped(_ sender: UIButton) {
         self.presenter.showRecipeWebsite()
     }
 }
+//MARK: - RecipeDetailsViewProtocol
 extension RecipeDetailsViewController: RecipeDetailsViewProtocol {
+    
+    func getRecipe(title: String, imageURL: String) {
+        self.recipeTitleLabel.text = title
+        self.recipeImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
+        self.recipeImageView.sd_setImage(with: URL(string: imageURL), completed: nil)
+    }
+    
     
 }

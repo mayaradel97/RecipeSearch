@@ -22,13 +22,12 @@ protocol SearchHistoryRouterProtocol {
     func  createModule(delegate: SearchHistoryDelegate)-> UIViewController
 }
 protocol SearchHistoryInputProtocol: SearchHistoryProtocol {
-  
+    
 }
 protocol SearchHistoryOutputProtocol {
     func getSearchHistoryArray(_ searchHistoryArray: [String]?)
 }
-protocol SearchHistoryTableViewCellProtocol
-{
+protocol SearchHistoryTableViewCellProtocol {
     func configure(searchHistoryText: String)
 }
 
