@@ -14,7 +14,7 @@ class RecipeDetailsRouter: RecipeDetailsRouterProtocol {
     
     //MARK:- init
     init() {
-        view = .instantiate(storyboardName: "RecipeDetailsStoryboard")
+        view = .instantiate(storyboardName: Constant.RecipeDetailsStoryboard.rawValue)
     }
     
     //MARK:- module creation

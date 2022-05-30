@@ -94,10 +94,7 @@ class RecipeSearchPresenter: RecipeSearchPresenterProtocol {
     }
 }
 //MARK:- RecipeSearchOutputProtocol
-extension RecipeSearchPresenter: RecipeSearchOutputProtocol
-{
-    
-    
+extension RecipeSearchPresenter: RecipeSearchOutputProtocol {
     func getFetchedRecipes(recipes: [Recipe]) {
         self.recipes = recipes
         guard let view = self.view else {return}

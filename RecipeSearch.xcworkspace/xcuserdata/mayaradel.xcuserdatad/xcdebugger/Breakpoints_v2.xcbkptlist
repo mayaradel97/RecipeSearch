@@ -78,8 +78,8 @@
             filePath = "RecipeSearch/Screens/Recipes Search/Presenter/RecipeSearchPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "fetchedRecipesFailed()"
             landmarkType = "7">
          </BreakpointContent>
@@ -130,6 +130,70 @@
             endingLineNumber = "9"
             landmarkName = "unknown"
             landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5AFAD0F6-2C64-4FD2-91AB-5E7EF77C1533"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RecipeSearch/Screens/Recipes Search/Interactor/RecipeSearchInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "getRecipes(searchText:filter:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5AFAD0F6-2C64-4FD2-91AB-5E7EF77C1533 - b69cdb4f45aa0302"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RecipeSearch.RecipeSearchInteractor.getRecipes(searchText: Swift.String, filter: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "RecipeSearch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mayaradel/Desktop/RecipeSearch/RecipeSearch/Screens/Recipes%20Search/Interactor/RecipeSearchInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "122">
+               </Location>
+               <Location
+                  uuid = "5AFAD0F6-2C64-4FD2-91AB-5E7EF77C1533 - 97f6373603373312"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;RecipeSearch.RecipeModel&gt;) -&gt; () in RecipeSearch.RecipeSearchInteractor.getRecipes(searchText: Swift.String, filter: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "RecipeSearch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mayaradel/Desktop/RecipeSearch/RecipeSearch/Screens/Recipes%20Search/Interactor/RecipeSearchInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "165">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "458F2905-C676-43CB-A649-A72C982B9ECB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RecipeSearchTests/RecipeSearchInteractorTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "testSearchHistory()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

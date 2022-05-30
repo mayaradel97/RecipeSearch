@@ -25,7 +25,7 @@ class RecipeDetailsViewController: UIViewController {
     }
     //MARK: - cell registeration
     func cellRegisteration() {
-        recipeIngredientsTableViewCell = String(describing: SearchHistoryTableViewCell.self)
+        recipeIngredientsTableViewCell = Constant.SearchHistoryTableViewCell.rawValue
         self.recipeIngredientsTableView.register(UINib(nibName: recipeIngredientsTableViewCell, bundle: nil), forCellReuseIdentifier: recipeIngredientsTableViewCell)
     }
     //MARK: - UI configuration

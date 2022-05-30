@@ -28,7 +28,7 @@ class RecipeSearchRouter: RecipeSearchRouterProtocol {
     
     //MARK:- module creation
     func createModule() {
-        let view: RecipeSearchViewController = .instantiate(storyboardName: "RecipeSearchStoryboard")
+        let view: RecipeSearchViewController = .instantiate(storyboardName: Constant.RecipeSearchStoryboard.rawValue)
         let interactor = RecipeSearchInteractor()
         let presenter = RecipeSearchPresenter(view: view, router: self, interactor: interactor)
         interactor.presenter = presenter
@@ -49,7 +49,9 @@ class RecipeSearchRouter: RecipeSearchRouterProtocol {
     }
     //MARK:- Alert
     func showAlert(with message: String )  {
+        if view != nil {
         self.view.showAlert(with: message)
+        }
     }
     
 }

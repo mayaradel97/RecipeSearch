@@ -45,8 +45,8 @@ class RecipeSearchViewController: UIViewController {
     //MARK:- cells registeration
     func cellsRegisteration() {
         
-        filterCollectionViewCell = String(describing: FilterCollectionViewCell.self)
-        recipeTableViewCell = String(describing: RecipeTableViewCell.self)
+        filterCollectionViewCell = Constant.FilterCollectionViewCell.rawValue
+        recipeTableViewCell = Constant.RecipeTableViewCell.rawValue
         
         filterCollectionView.register(UINib(nibName: filterCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: filterCollectionViewCell)
         recipesTableView.register(UINib(nibName: recipeTableViewCell, bundle: nil), forCellReuseIdentifier: recipeTableViewCell)

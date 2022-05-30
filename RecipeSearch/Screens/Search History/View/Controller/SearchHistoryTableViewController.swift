@@ -26,7 +26,7 @@ class SearchHistoryTableViewController: UITableViewController {
     
     // MARK: - cellRegisteration
     func cellRegisteration() {
-        searchHistoryCell = String(describing: SearchHistoryTableViewCell.self)
+        searchHistoryCell = Constant.SearchHistoryTableViewCell.rawValue
         self.tableView.register(UINib(nibName: searchHistoryCell, bundle: nil), forCellReuseIdentifier: searchHistoryCell)
     }
     // MARK: - Table view data source
