@@ -19,7 +19,6 @@
 		964F3244283FFC9800620120 /* RecipeSearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964F3243283FFC9800620120 /* RecipeSearchInteractor.swift */; };
 		964F3247283FFCB300620120 /* RecipeSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964F3246283FFCB300620120 /* RecipeSearchPresenter.swift */; };
 		964F324A283FFCEF00620120 /* RecipeSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964F3249283FFCEF00620120 /* RecipeSearchRouter.swift */; };
-		9657F59E284258C500844C67 /* SearchHistoryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657F59D284258C500844C67 /* SearchHistoryDelegate.swift */; };
 		9658E578283FD4CB0028E15C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9658E577283FD4CB0028E15C /* AppDelegate.swift */; };
 		9658E57A283FD4CB0028E15C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9658E579283FD4CB0028E15C /* SceneDelegate.swift */; };
 		9658E57C283FD4CB0028E15C /* RecipeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9658E57B283FD4CB0028E15C /* RecipeSearchViewController.swift */; };
@@ -47,6 +46,7 @@
 		96C414CA28404BE40073BB8F /* SearchHistoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C414C928404BE40073BB8F /* SearchHistoryInteractor.swift */; };
 		96C414CD28404BF20073BB8F /* SearchHistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C414CC28404BF20073BB8F /* SearchHistoryPresenter.swift */; };
 		96C414D028404C010073BB8F /* SearchHistoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C414CF28404C010073BB8F /* SearchHistoryRouter.swift */; };
+		96C9A64828451B530079E2DB /* SearchHistoryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C9A64728451B530079E2DB /* SearchHistoryDelegate.swift */; };
 		96DA77582843C84400DD5B5B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DA77572843C84400DD5B5B /* API.swift */; };
 		96DA775B2843C84B00DD5B5B /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DA775A2843C84B00DD5B5B /* Constant.swift */; };
 		96DA775E2843C85300DD5B5B /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DA775D2843C85300DD5B5B /* Filter.swift */; };
@@ -84,7 +84,6 @@
 		964F3243283FFC9800620120 /* RecipeSearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchInteractor.swift; sourceTree = "<group>"; };
 		964F3246283FFCB300620120 /* RecipeSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchPresenter.swift; sourceTree = "<group>"; };
 		964F3249283FFCEF00620120 /* RecipeSearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchRouter.swift; sourceTree = "<group>"; };
-		9657F59D284258C500844C67 /* SearchHistoryDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchHistoryDelegate.swift; path = RecipeSearch/Extension/SearchHistoryDelegate.swift; sourceTree = SOURCE_ROOT; };
 		9658E574283FD4CB0028E15C /* RecipeSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9658E577283FD4CB0028E15C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9658E579283FD4CB0028E15C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +115,7 @@
 		96C414C928404BE40073BB8F /* SearchHistoryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryInteractor.swift; sourceTree = "<group>"; };
 		96C414CC28404BF20073BB8F /* SearchHistoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryPresenter.swift; sourceTree = "<group>"; };
 		96C414CF28404C010073BB8F /* SearchHistoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryRouter.swift; sourceTree = "<group>"; };
+		96C9A64728451B530079E2DB /* SearchHistoryDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryDelegate.swift; sourceTree = "<group>"; };
 		96DA77572843C84400DD5B5B /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		96DA775A2843C84B00DD5B5B /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		96DA775D2843C85300DD5B5B /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
@@ -205,14 +205,6 @@
 			name = Recipe;
 			sourceTree = "<group>";
 		};
-		9657F59C2842589200844C67 /* Delegete */ = {
-			isa = PBXGroup;
-			children = (
-				9657F59D284258C500844C67 /* SearchHistoryDelegate.swift */,
-			);
-			path = Delegete;
-			sourceTree = "<group>";
-		};
 		9658E56B283FD4CB0028E15C = {
 			isa = PBXGroup;
 			children = (
@@ -240,8 +232,8 @@
 			children = (
 				968C60AF283FD9210055B426 /* Application */,
 				968C60B4283FD93A0055B426 /* Resources */,
+				96C9A63928451AC00079E2DB /* Delegate */,
 				968C60B5283FD9450055B426 /* Configuration */,
-				9657F59C2842589200844C67 /* Delegete */,
 				965EDE61284008B500D33405 /* Extension */,
 				96DA77562843C83100DD5B5B /* Enumeration */,
 				96C414A72840334A0073BB8F /* Network */,
@@ -535,6 +527,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		96C9A63928451AC00079E2DB /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				96C9A64728451B530079E2DB /* SearchHistoryDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
 		96DA77562843C83100DD5B5B /* Enumeration */ = {
 			isa = PBXGroup;
 			children = (
@@ -745,7 +745,6 @@
 				964F3247283FFCB300620120 /* RecipeSearchPresenter.swift in Sources */,
 				96C414CD28404BF20073BB8F /* SearchHistoryPresenter.swift in Sources */,
 				964F3244283FFC9800620120 /* RecipeSearchInteractor.swift in Sources */,
-				9657F59E284258C500844C67 /* SearchHistoryDelegate.swift in Sources */,
 				9658E57C283FD4CB0028E15C /* RecipeSearchViewController.swift in Sources */,
 				968C60D1283FE4270055B426 /* RecipeSearchProtocols.swift in Sources */,
 				96C1E08B28429BCC00166414 /* RecipeDetailsViewController + RecipeIngredientsTableView.swift in Sources */,
@@ -766,6 +765,7 @@
 				968C60CA283FE1D90055B426 /* Recipe.swift in Sources */,
 				96DA77582843C84400DD5B5B /* API.swift in Sources */,
 				96C414C228404B7F0073BB8F /* SearchHistoryTableViewCell.swift in Sources */,
+				96C9A64828451B530079E2DB /* SearchHistoryDelegate.swift in Sources */,
 				96C414D028404C010073BB8F /* SearchHistoryRouter.swift in Sources */,
 				96E1410E28410BCB00F07D08 /* RecipeSearchWorker.swift in Sources */,
 				96C414CA28404BE40073BB8F /* SearchHistoryInteractor.swift in Sources */,
@@ -987,7 +987,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_CODE_SIGN_FLAGS = "--generate-entitlement-der";
+				OTHER_CODE_SIGN_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = task.RecipeSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1008,7 +1008,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_CODE_SIGN_FLAGS = "--generate-entitlement-der";
+				OTHER_CODE_SIGN_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = task.RecipeSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
