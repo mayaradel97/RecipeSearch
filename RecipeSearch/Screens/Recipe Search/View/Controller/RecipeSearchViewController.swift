@@ -20,7 +20,11 @@ class RecipeSearchViewController: UIViewController {
     var searchControllerText: String!
     var currentSelectedFilter = 0 {
         didSet {
+            if currentSelectedFilter == 0 {
+                self.scrollToLeft()
+            }
             self.filterCollectionView.reloadData()
+            
         }
     }
     
@@ -40,8 +44,10 @@ class RecipeSearchViewController: UIViewController {
         self.filterCollectionView.isHidden = true
         self.recipesTableView.isHidden = true
     }
-    
-    
+    //MARK:- filter scrolling
+    func scrollToLeft() {
+        self.filterCollectionView.scrollToItem(at: IndexPath(index: .zero), at: .left, animated: false)
+    }
     //MARK:- cells registeration
     func cellsRegisteration() {
         

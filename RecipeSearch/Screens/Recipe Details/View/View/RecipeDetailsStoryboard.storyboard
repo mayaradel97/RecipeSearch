@@ -19,6 +19,9 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oOn-0j-c8L">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="358.5"/>
+                                <accessibility key="accessibilityConfiguration" label="recipeImage">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pt-yQ-cbz">
                                 <rect key="frame" x="0.0" y="277" width="414" height="81.5"/>
@@ -30,6 +33,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNM-hM-bFb">
                                 <rect key="frame" x="24" y="793.5" width="366" height="52.5"/>
                                 <color key="backgroundColor" red="0.0" green="0.69576859560000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration" label="recipeWebsite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Recipe Website">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -19,33 +19,36 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NMA-rr-or4">
-                        <rect key="frame" x="4" y="4" width="298" height="195"/>
+                        <rect key="frame" x="4" y="0.0" width="298" height="203"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cac-ge-Wl0">
-                                <rect key="frame" x="0.0" y="0.0" width="145" height="195"/>
+                                <rect key="frame" x="0.0" y="0.0" width="145" height="203"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8z2-go-w33">
-                                <rect key="frame" x="153" y="0.0" width="145" height="195"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8z2-go-w33">
+                                <rect key="frame" x="153" y="0.0" width="145" height="203"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mIG-Lt-KAF">
-                                        <rect key="frame" x="0.0" y="0.0" width="145" height="89.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="mIG-Lt-KAF">
+                                        <rect key="frame" x="0.0" y="0.0" width="145" height="97.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1a-jP-lsl">
-                                                <rect key="frame" x="0.0" y="0.0" width="145" height="41"/>
+                                                <rect key="frame" x="0.0" y="8" width="145" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlP-m3-Gk9">
-                                                <rect key="frame" x="0.0" y="49" width="145" height="40.5"/>
+                                                <rect key="frame" x="0.0" y="60" width="145" height="37.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.68894603570000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="U1a-jP-lsl" firstAttribute="top" secondItem="mIG-Lt-KAF" secondAttribute="top" constant="8" id="It1-6W-3Bz"/>
+                                        </constraints>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOD-Zh-BTA">
-                                        <rect key="frame" x="0.0" y="105.5" width="145" height="89.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOD-Zh-BTA">
+                                        <rect key="frame" x="0.0" y="105.5" width="145" height="97.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -54,11 +57,14 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Cac-ge-Wl0" firstAttribute="leading" secondItem="NMA-rr-or4" secondAttribute="leading" constant="4" id="A6n-eS-Jy6"/>
+                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="NMA-rr-or4" secondAttribute="bottom" constant="4" id="DUF-3S-f0o"/>
-                    <constraint firstItem="NMA-rr-or4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="oWN-Ag-gSW"/>
+                    <constraint firstAttribute="bottom" secondItem="NMA-rr-or4" secondAttribute="bottom" id="DUF-3S-f0o"/>
+                    <constraint firstItem="NMA-rr-or4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="oWN-Ag-gSW"/>
                     <constraint firstAttribute="trailing" secondItem="NMA-rr-or4" secondAttribute="trailing" constant="4" id="qor-YA-nPo"/>
                     <constraint firstItem="NMA-rr-or4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="utQ-5d-88R"/>
                 </constraints>
